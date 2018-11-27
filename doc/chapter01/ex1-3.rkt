@@ -4,3 +4,9 @@
   (cond ((and (>= a c) (>= b c) (sum-of-two a b)))
         ((and (>= a b) (>= c b) (sum-of-two a c)))
         ((and (>= b a) (>= c a) (sum-of-two b c)))))
+
+
+(define (sum-larger-square a b c)
+  (cond ((and (> (* a a) (* b b)) (> (* c c) (* b b))) (+ (* a a) (* c c)))
+        ((and (> (* b b) (* a a)) (> (* c c) (* a a))) (+ (* b b) (* c c)))     
+        (else (+ (* a a) (* b b)))))
