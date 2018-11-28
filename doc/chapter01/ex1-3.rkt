@@ -10,3 +10,10 @@
   (cond ((and (> (* a a) (* b b)) (> (* c c) (* b b))) (+ (* a a) (* c c)))
         ((and (> (* b b) (* a a)) (> (* c c) (* a a))) (+ (* b b) (* c c)))     
         (else (+ (* a a) (* b b)))))
+
+(define (sum-larger-square a b c)
+  (define (square x) (* x x))
+  (define (sum-squares x y) (+ (square x) (square y)))
+  (cond ((and (> a c) (> b c) (sum-squares a b)))
+        ((and (> a b) (> c b) (sum-squares a c)))
+        (else (sum-squares b c))))
